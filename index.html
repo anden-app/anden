@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andén — Trenes en tiempo real en España | AVE, AVLO, Alvia, Avant</title>
+  <meta name="description" content="Sigue trenes por España en tiempo real. Consulta ubicación, retrasos, rutas, horarios por estación y crea tu pasaporte ferroviario con Andén.">
+  <meta name="keywords" content="trenes tiempo real, mapa de trenes, seguimiento de trenes, retrasos de tren, horarios de tren, tren en directo, AVE, Cercanías, Media Distancia, estaciones de tren, train tracker Spain, live train map, Spanish rail">
+  <meta name="author" content="Santiago Muñoz Thomen">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://santiagomunozthomen.github.io/anden/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Andén — Trenes en tiempo real en España">
+  <meta property="og:description" content="Sigue más de 200 trenes en tiempo real. Mapa interactivo, retrasos al segundo y tu pasaporte ferroviario. Gratis en App Store.">
+  <meta property="og:image" content="https://santiagomunozthomen.github.io/anden/images/Viarail-icon-1024.png">
+  <meta property="og:url" content="https://santiagomunozthomen.github.io/anden/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Andén">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Andén — Trenes en tiempo real en España">
+  <meta name="twitter:description" content="Sigue trenes por España en tiempo real. Retrasos, rutas, horarios y tu pasaporte ferroviario.">
+  <meta name="twitter:image" content="https://santiagomunozthomen.github.io/anden/images/Viarail-icon-1024.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/app-icon.png">
+  <link rel="apple-touch-icon" href="images/app-icon.png">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Andén",
+    "operatingSystem": "iOS 16.0+",
+    "applicationCategory": "TravelApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    },
+    "description": "Sigue trenes por España en tiempo real. Consulta ubicación, retrasos, rutas, horarios por estación y crea tu pasaporte ferroviario.",
+    "author": {
+      "@type": "Person",
+      "name": "Santiago Muñoz Thomen"
+    },
+    "inLanguage": ["es", "en"],
+    "screenshot": "https://santiagomunozthomen.github.io/anden/images/mapa.png",
+    "featureList": "Mapa en tiempo real, Seguimiento de trenes, Pasaporte ferroviario, Retrasos en vivo, Horarios por estación, Búsqueda inteligente"
+  }
+  </script>
+
+  <link rel="preload" as="image" href="images/pasaporte.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="images/app-icon.png" alt="Andén" class="nav-logo-img">
+        <span class="nav-logo-text">andén</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Funciones</a>
+        <a href="#how-it-works">Cómo funciona</a>
+        <a href="privacy.html">Privacidad</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <a href="#download" class="nav-cta">Descargar</a>
+      </div>
+      <button class="nav-mobile-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features">Funciones</a>
+    <a href="#how-it-works">Cómo funciona</a>
+    <a href="privacy.html">Privacidad</a>
+    <a href="#download" class="mobile-menu-cta">Descargar</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Sigue los trenes de España en tiempo real.</h1>
+        <p class="hero-subtitle">Consulta ubicaciones, retrasos, rutas, horarios por estación y todo tu historial ferroviario.</p>
+        <div class="hero-buttons">
+          <a href="#download" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Descargar en App Store
+          </a>
+        </div>
+        <p class="hero-note">Gratis · Solo iOS · Próximamente Android</p>
+      </div>
+      <div class="hero-phone">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <img src="images/pasaporte.png" alt="Andén — Pasaporte ferroviario con estadísticas de viajes en tren" class="phone-screen">
+        </div>
+        <div class="floating-card floating-card-1">
+          <div class="floating-card-icon" style="background: #22c55e20; color: #22c55e;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <div class="floating-card-title">Cada 15 segundos</div>
+            <div class="floating-card-desc">Datos en tiempo real</div>
+          </div>
+        </div>
+        <div class="floating-card floating-card-2">
+          <div class="floating-card-icon" style="background: #ef444420; color: #ef4444;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <div class="floating-card-title">AVE 3142</div>
+            <div class="floating-card-desc" style="color: #ef4444;">+7min retraso</div>
+          </div>
+        </div>
+        <div class="floating-card floating-card-3">
+          <div class="floating-card-icon" style="background: #a855f720; color: #a855f7;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <div class="floating-card-title">3.4k km</div>
+            <div class="floating-card-desc">Tu pasaporte</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <section class="stats-bar">
+    <div class="stats-container">
+      <div class="stat">
+        <span class="stat-number">200+</span>
+        <span class="stat-label">Trenes en vivo</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">15s</span>
+        <span class="stat-label">Actualización</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">1,000+</span>
+        <span class="stat-label">Estaciones</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Gratis</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features grid -->
+  <section class="features" id="features">
+    <div class="section-container">
+      <h2 class="section-title">Todo lo que necesitas para viajar en tren</h2>
+      <p class="section-subtitle">Desde el mapa en tiempo real hasta tu historial personal de viajes.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="background: #22c55e15;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+          </div>
+          <h3>Mapa en tiempo real</h3>
+          <p>Más de 200 trenes AVE, AVLO, Alvia, Avant y MD moviéndose por España, actualizados cada 15 segundos.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background: #3b82f615;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          </div>
+          <h3>Seguimiento de trenes</h3>
+          <p>Countdown hasta llegada, retraso actualizado, barra de progreso y próxima parada.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background: #a855f715;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Timeline de paradas</h3>
+          <p>Todas las estaciones intermedias con horarios de llegada y salida, y el estado actual del recorrido.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background: #f59e0b15;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>Horarios por estación</h3>
+          <p>Salidas y llegadas de más de 1,000 estaciones. Toca cualquier tren en vivo para ver su detalle.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background: #ec489915;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Pasaporte ferroviario</h3>
+          <p>Kilómetros recorridos, ciudades visitadas, CO2 ahorrado, puntualidad y tipo más usado.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="background: #06b6d415;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Privacidad total</h3>
+          <p>Sin cuenta, sin anuncios, sin tracking. Tus datos se quedan en tu dispositivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-container">
+      <h2 class="section-title">Sigue cualquier tren en 3 pasos</h2>
+      <p class="section-subtitle">Sin registro. Sin complicaciones. Abre y viaja.</p>
+      <div class="steps-layout">
+        <div class="steps-list">
+          <div class="step active" data-step="0">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Abre el mapa</h3>
+              <p>Ve todos los trenes de larga distancia moviéndose en tiempo real por España. Filtra por tipo: AVE, AVLO, Alvia, Avant o MD.</p>
+            </div>
+          </div>
+          <div class="step" data-step="1">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Toca un tren</h3>
+              <p>Selecciona cualquier tren para ver su ruta completa, próxima parada, retraso actualizado y countdown hasta la llegada.</p>
+            </div>
+          </div>
+          <div class="step" data-step="2">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Síguelo</h3>
+              <p>Pulsa "Seguir" y el tren aparece en tu lista. Se guarda automáticamente en tu pasaporte ferroviario al completar el viaje.</p>
+            </div>
+          </div>
+        </div>
+        <div class="steps-phone">
+          <div class="phone-frame phone-frame-small">
+            <div class="phone-notch"></div>
+            <img src="images/mapa.png" alt="Andén — Mapa de trenes en tiempo real en España" class="phone-screen step-screen active" data-step="0">
+            <img src="images/detalle-tren.png" alt="Andén — Detalle de tren con retraso y ruta" class="phone-screen step-screen" data-step="1">
+            <img src="images/mis-trenes.png" alt="Andén — Lista de trenes seguidos" class="phone-screen step-screen" data-step="2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operators -->
+  <section class="operators">
+    <div class="section-container">
+      <h2 class="section-title">España sobre raíles, en tiempo real</h2>
+      <p class="section-subtitle">Más de 200 trenes de larga distancia, actualizados cada 15 segundos.</p>
+      <div class="operator-chips">
+        <span class="operator-chip" style="background: #6b1d6e;">AVE</span>
+        <span class="operator-chip" style="background: #7c3aed;">AVLO</span>
+        <span class="operator-chip" style="background: #be185d;">Alvia</span>
+        <span class="operator-chip" style="background: #db2777;">Avant</span>
+        <span class="operator-chip" style="background: #0d9488;">MD</span>
+      </div>
+      <div class="operator-coming-soon">
+        <div class="coming-soon-row">
+          <span class="coming-soon-chip">Iryo</span>
+          <span class="coming-soon-chip">Ouigo</span>
+          <span class="coming-soon-chip">Cercanías</span>
+          <span class="coming-soon-label">Próximamente</span>
+        </div>
+      </div>
+      <div class="operator-note">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Andén es una aplicación independiente y no está afiliada, patrocinada ni operada por Renfe.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="download">
+    <div class="section-container">
+      <div class="cta-card">
+        <img src="images/app-icon.png" alt="Andén" class="cta-icon">
+        <h2>Tu tren, en directo.</h2>
+        <p>Disponible gratis en App Store. Sin suscripción, sin anuncios, sin registro.</p>
+        <a href="#" class="btn btn-primary btn-large">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Descargar en App Store
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/app-icon.png" alt="Andén" class="footer-logo-img">
+            <span class="footer-logo-text">andén</span>
+          </div>
+          <p class="footer-tagline">Tu tren, en directo.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#features">Funciones</a>
+          <a href="#how-it-works">Cómo funciona</a>
+          <a href="privacy.html">Privacidad</a>
+          <a href="terms.html">Términos de uso</a>
+          <a href="accessibility.html">Accesibilidad</a>
+        </div>
+      </div>
+      <div class="footer-support">
+        <div>
+          <strong>Soporte</strong>
+          <span>¿Tienes alguna duda o sugerencia?</span>
+        </div>
+        <a href="mailto:info.andenapp@gmail.com">info.andenapp@gmail.com</a>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Andén. Todos los derechos reservados.</span>
+        <span>Origen de los datos: Renfe Operadora</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

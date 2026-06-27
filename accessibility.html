@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andén — Declaración de Accesibilidad</title>
+  <meta name="description" content="Declaración de accesibilidad de Andén.">
+  <link rel="icon" type="image/png" href="images/app-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    const s = localStorage.getItem('anden-theme');
+    if (s) document.documentElement.setAttribute('data-theme', s);
+  </script>
+  <style>
+    .legal-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+    .legal-content h1 {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .legal-date {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-bottom: 40px;
+    }
+    .legal-content h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--green);
+      margin: 36px 0 12px;
+    }
+    .legal-content p, .legal-content li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .legal-content ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    .legal-content li {
+      margin-bottom: 6px;
+    }
+    .legal-content strong {
+      color: var(--text-primary);
+    }
+    .legal-content a {
+      color: var(--green);
+    }
+    .legal-content a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar scrolled">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/app-icon.png" alt="Andén" class="nav-logo-img">
+        <span class="nav-logo-text">andén</span>
+      </a>
+      <a href="index.html" style="font-size:14px; color: var(--text-secondary);">
+        &larr; Volver al inicio
+      </a>
+    </div>
+  </nav>
+
+  <div class="legal-content">
+    <h1>Declaración de Accesibilidad</h1>
+    <p class="legal-date">Última actualización: 27 de junio de 2026</p>
+
+    <h2>Compromiso</h2>
+    <p>Andén se compromete a garantizar la accesibilidad de su sitio web y su aplicación móvil de conformidad con la Directiva Europea de Accesibilidad (EAA) y la Ley 11/2023 de trasposición al ordenamiento jurídico español.</p>
+    <p>Trabajamos para que nuestro contenido digital sea accesible para el mayor número posible de personas, independientemente de sus capacidades.</p>
+
+    <h2>Estado de conformidad</h2>
+    <p>Este sitio web y la aplicación Andén se encuentran en <strong>conformidad parcial</strong> con el estándar WCAG 2.1 nivel AA. "Conformidad parcial" significa que algunas partes del contenido no cumplen plenamente con todos los criterios de accesibilidad.</p>
+
+    <h2>Medidas adoptadas</h2>
+    <p>Para mejorar la accesibilidad, hemos implementado las siguientes medidas:</p>
+    <ul>
+      <li>Uso de HTML semántico y estructura de encabezados jerárquica.</li>
+      <li>Texto alternativo en todas las imágenes.</li>
+      <li>Contraste de color suficiente entre texto y fondo.</li>
+      <li>Diseño responsive adaptado a diferentes tamaños de pantalla.</li>
+      <li>Navegación accesible mediante teclado.</li>
+      <li>Etiquetas ARIA en elementos interactivos.</li>
+      <li>En la aplicación iOS: compatibilidad con VoiceOver y Dynamic Type.</li>
+    </ul>
+
+    <h2>Limitaciones conocidas</h2>
+    <p>A pesar de nuestros esfuerzos, algunas áreas pueden presentar limitaciones de accesibilidad:</p>
+    <ul>
+      <li>El mapa interactivo de la aplicación puede tener limitaciones para usuarios de lectores de pantalla.</li>
+      <li>Algunas animaciones del sitio web pueden no ser compatibles con la preferencia de movimiento reducido en todos los casos.</li>
+    </ul>
+    <p>Trabajamos continuamente para mejorar estos aspectos.</p>
+
+    <h2>Observaciones y contacto</h2>
+    <p>Si encuentras alguna barrera de accesibilidad en nuestro sitio web o aplicación, o si necesitas información en un formato alternativo, ponte en contacto con nosotros:</p>
+    <p>Correo electrónico: <a href="mailto:info.andenapp@gmail.com">info.andenapp@gmail.com</a></p>
+    <p>Nos comprometemos a responder en un plazo máximo de 15 días hábiles y a buscar una solución adecuada.</p>
+
+    <h2>Procedimiento de reclamación</h2>
+    <p>Si tras contactar con nosotros consideras que la respuesta no es satisfactoria, puedes presentar una reclamación ante la autoridad competente en materia de accesibilidad de tu comunidad autónoma.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <span>&copy; 2026 Andén. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
