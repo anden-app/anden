@@ -11,83 +11,16 @@
     const s = localStorage.getItem('anden-theme');
     if (s) document.documentElement.setAttribute('data-theme', s);
   </script>
-  <style>
-    .legal-content {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 120px 24px 80px;
-    }
-    .legal-content h1 {
-      font-size: 40px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-    }
-    .legal-date {
-      font-size: 13px;
-      color: var(--text-tertiary);
-      margin-bottom: 40px;
-    }
-    .legal-content h2 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--green);
-      margin: 36px 0 12px;
-    }
-    .legal-content p, .legal-content li {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-    .legal-content ul {
-      padding-left: 20px;
-      margin-bottom: 16px;
-    }
-    .legal-content li {
-      margin-bottom: 6px;
-    }
-    .legal-content strong {
-      color: var(--text-primary);
-    }
-    .legal-content a {
-      color: var(--green);
-    }
-    .legal-content a:hover {
-      text-decoration: underline;
-    }
-    .legal-nav {
-      display: flex;
-      gap: 24px;
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border);
-    }
-    .legal-nav a {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-tertiary);
-      transition: color 0.2s;
-    }
-    .legal-nav a.active {
-      color: var(--green);
-    }
-    .legal-nav a:hover {
-      color: var(--text-primary);
-    }
-  </style>
 </head>
 <body>
 
   <nav class="navbar scrolled">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <img src="images/app-icon.png" alt="Andén" class="nav-logo-img">
+        <img src="images/app-icon.webp" alt="Andén" class="nav-logo-img" width="32" height="32" decoding="async">
         <span class="nav-logo-text">Andén</span>
       </a>
-      <a href="index.html" style="font-size:14px; color: var(--text-secondary);">
-        &larr; Volver al inicio
-      </a>
+      <a href="index.html" class="legal-back">&larr; Volver al inicio</a>
     </div>
   </nav>
 
@@ -95,6 +28,7 @@
     <div class="legal-nav">
       <a href="privacy.html">Privacidad</a>
       <a href="terms.html" class="active">Términos de uso</a>
+      <a href="accessibility.html">Accesibilidad</a>
     </div>
 
     <h1>Términos de Uso</h1>

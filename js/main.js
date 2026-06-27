@@ -5,7 +5,7 @@ const root = document.documentElement;
 const saved = localStorage.getItem('anden-theme');
 if (saved) root.setAttribute('data-theme', saved);
 
-themeToggle.addEventListener('click', () => {
+themeToggle?.addEventListener('click', () => {
   const isDark = getComputedStyle(root).getPropertyValue('--bg-page').trim() === '#0a0a0f';
   const next = isDark ? 'light' : 'dark';
   root.setAttribute('data-theme', next);
@@ -15,22 +15,24 @@ themeToggle.addEventListener('click', () => {
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 10);
+  navbar?.classList.toggle('scrolled', window.scrollY > 10);
 });
 
 // Mobile menu toggle
 const navToggle = document.getElementById('navToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 
-navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
+navToggle?.addEventListener('click', () => {
+  const isOpen = navToggle.classList.toggle('open');
+  mobileMenu?.classList.toggle('open', isOpen);
+  navToggle.setAttribute('aria-expanded', String(isOpen));
 });
 
-mobileMenu.querySelectorAll('a').forEach(link => {
+mobileMenu?.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    navToggle.classList.remove('open');
+    navToggle?.classList.remove('open');
     mobileMenu.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
   });
 });
 
@@ -89,9 +91,16 @@ fadeElements.forEach(el => fadeObserver.observe(el));
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute('href'));
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    const target = document.querySelector(href);
     if (target) {
+      e.preventDefault();
       const offset = 80;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
