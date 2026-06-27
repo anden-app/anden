@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://smunozthomen.github.io/anden/sitemap.xml
+Sitemap: https://anden-app.github.io/anden/sitemap.xml
