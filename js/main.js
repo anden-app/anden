@@ -73,7 +73,7 @@ if (stepsSection) {
 }
 
 // Fade-up animation on scroll
-const fadeElements = document.querySelectorAll('.feature-card, .section-title, .section-subtitle, .cta-card, .steps-layout, .operator-chips, .stats-container');
+const fadeElements = document.querySelectorAll('.feature-card, .faq-item, .section-title, .section-subtitle, .cta-card, .steps-layout, .operator-chips, .stats-container');
 fadeElements.forEach(el => el.classList.add('fade-up'));
 
 const fadeObserver = new IntersectionObserver((entries) => {

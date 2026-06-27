@@ -795,6 +795,49 @@ img { max-width: 100%; display: block; }
 }
 
 /* ========================================
+   FAQ
+   ======================================== */
+
+.faq {
+  padding: 96px 0;
+  background: var(--bg-page);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.faq-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-card-hover);
+}
+
+.faq-item h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ========================================
    CTA
    ======================================== */
 
@@ -987,7 +1030,7 @@ img { max-width: 100%; display: block; }
   .stat-number { font-size: 22px; }
   .stat-label { font-size: 11px; }
 
-  .features-grid { grid-template-columns: 1fr; }
+  .features-grid, .faq-grid { grid-template-columns: 1fr; }
   .steps-layout { flex-direction: column-reverse; gap: 40px; }
 
   .phone-frame {

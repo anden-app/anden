@@ -13,7 +13,10 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Andén — Trenes en tiempo real en España">
   <meta property="og:description" content="Sigue más de 200 trenes en tiempo real. Mapa interactivo, retrasos al segundo y tu pasaporte ferroviario. Gratis en App Store.">
-  <meta property="og:image" content="https://anden-app.github.io/anden/images/Viarail-icon-1024.png">
+  <meta property="og:image" content="https://anden-app.github.io/anden/images/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Andén — Trenes en tiempo real en España">
   <meta property="og:url" content="https://anden-app.github.io/anden/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
@@ -23,7 +26,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Andén — Trenes en tiempo real en España">
   <meta name="twitter:description" content="Sigue trenes por España en tiempo real. Retrasos, rutas, horarios y tu pasaporte ferroviario.">
-  <meta name="twitter:image" content="https://anden-app.github.io/anden/images/Viarail-icon-1024.png">
+  <meta name="twitter:image" content="https://anden-app.github.io/anden/images/social-preview.png">
+  <meta name="twitter:image:alt" content="Andén — Trenes en tiempo real en España">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/app-icon.png">
@@ -33,24 +37,93 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "Andén",
-    "operatingSystem": "iOS 16.0+",
-    "applicationCategory": "TravelApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
-    },
-    "description": "Sigue trenes por España en tiempo real. Consulta ubicación, retrasos, rutas, horarios por estación y crea tu pasaporte ferroviario.",
-    "author": {
-      "@type": "Person",
-      "name": "Santiago Muñoz Thomen"
-    },
-    "inLanguage": ["es", "en"],
-    "screenshot": "https://anden-app.github.io/anden/images/mapa.png",
-    "featureList": "Mapa en tiempo real, Seguimiento de trenes, Pasaporte ferroviario, Retrasos en vivo, Horarios por estación, Búsqueda inteligente"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://anden-app.github.io/anden/#website",
+        "url": "https://anden-app.github.io/anden/",
+        "name": "Andén",
+        "inLanguage": "es",
+        "description": "Sigue trenes por España en tiempo real. Consulta ubicación, retrasos, rutas, horarios por estación y crea tu pasaporte ferroviario con Andén."
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://anden-app.github.io/anden/#app",
+        "name": "Andén",
+        "url": "https://anden-app.github.io/anden/",
+        "image": "https://anden-app.github.io/anden/images/social-preview.png",
+        "operatingSystem": "iOS 16.0+",
+        "applicationCategory": "TravelApplication",
+        "applicationSubCategory": "Rail travel app",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/PreOrder"
+        },
+        "description": "Sigue trenes por España en tiempo real. Consulta ubicación, retrasos, rutas, horarios por estación y crea tu pasaporte ferroviario.",
+        "author": {
+          "@type": "Person",
+          "name": "Santiago Muñoz Thomen"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Andén"
+        },
+        "inLanguage": ["es", "en"],
+        "screenshot": [
+          "https://anden-app.github.io/anden/images/mapa.png",
+          "https://anden-app.github.io/anden/images/detalle-tren.png",
+          "https://anden-app.github.io/anden/images/mis-trenes.png"
+        ],
+        "featureList": [
+          "Mapa de trenes en tiempo real",
+          "Seguimiento de trenes AVE, AVLO, Alvia, Avant y Media Distancia",
+          "Retrasos en vivo",
+          "Horarios por estación",
+          "Pasaporte ferroviario",
+          "Búsqueda inteligente"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://anden-app.github.io/anden/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es Andén?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Andén es una app para seguir trenes en tiempo real en España, consultar retrasos, rutas, horarios por estación y guardar tu historial ferroviario."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Andén está disponible en App Store?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Andén está en desarrollo y estará disponible próximamente para iOS."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué trenes se pueden seguir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La app está pensada para trenes de larga distancia y Media Distancia en España, incluyendo AVE, AVLO, Alvia, Avant y MD."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Andén está afiliada a Renfe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Andén es una aplicación independiente y no está afiliada, patrocinada ni operada por Renfe."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
@@ -63,7 +136,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="nav-logo">
-        <img src="images/app-icon.png" alt="Andén" class="nav-logo-img">
+        <img src="images/app-icon.webp" alt="Andén" class="nav-logo-img" width="32" height="32" decoding="async">
         <span class="nav-logo-text">andén</span>
       </a>
       <div class="nav-links">
@@ -109,7 +182,7 @@
       <div class="hero-phone">
         <div class="phone-frame">
           <div class="phone-notch"></div>
-          <img src="images/pasaporte.png" alt="Andén — Pasaporte ferroviario con estadísticas de viajes en tren" class="phone-screen">
+          <img src="images/pasaporte.webp" alt="Andén — Pasaporte ferroviario con estadísticas de viajes en tren" class="phone-screen" width="1179" height="2556" fetchpriority="high" decoding="async">
         </div>
         <div class="floating-card floating-card-1">
           <div class="floating-card-icon" style="background: #22c55e20; color: #22c55e;">
@@ -251,9 +324,9 @@
         <div class="steps-phone">
           <div class="phone-frame phone-frame-small">
             <div class="phone-notch"></div>
-            <img src="images/mapa.png" alt="Andén — Mapa de trenes en tiempo real en España" class="phone-screen step-screen active" data-step="0">
-            <img src="images/detalle-tren.png" alt="Andén — Detalle de tren con retraso y ruta" class="phone-screen step-screen" data-step="1">
-            <img src="images/mis-trenes.png" alt="Andén — Lista de trenes seguidos" class="phone-screen step-screen" data-step="2">
+            <img src="images/mapa.webp" alt="Andén — Mapa de trenes en tiempo real en España" class="phone-screen step-screen active" data-step="0" width="1320" height="2868" loading="lazy" decoding="async">
+            <img src="images/detalle-tren.webp" alt="Andén — Detalle de tren con retraso y ruta" class="phone-screen step-screen" data-step="1" width="1320" height="2868" loading="lazy" decoding="async">
+            <img src="images/mis-trenes.webp" alt="Andén — Lista de trenes seguidos" class="phone-screen step-screen" data-step="2" width="1320" height="2868" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -287,11 +360,37 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section-container">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <p class="section-subtitle">Lo esencial sobre Andén antes del lanzamiento.</p>
+      <div class="faq-grid">
+        <article class="faq-item">
+          <h3>¿Qué es Andén?</h3>
+          <p>Andén es una app para seguir trenes en tiempo real en España, consultar retrasos, rutas, horarios por estación y guardar tu historial ferroviario.</p>
+        </article>
+        <article class="faq-item">
+          <h3>¿Andén está disponible en App Store?</h3>
+          <p>Está en desarrollo y estará disponible próximamente para iOS. La versión para Android llegará más adelante.</p>
+        </article>
+        <article class="faq-item">
+          <h3>¿Qué trenes se pueden seguir?</h3>
+          <p>La app está pensada para trenes de larga distancia y Media Distancia en España, incluyendo AVE, AVLO, Alvia, Avant y MD.</p>
+        </article>
+        <article class="faq-item">
+          <h3>¿Andén está afiliada a Renfe?</h3>
+          <p>No. Andén es una aplicación independiente y no está afiliada, patrocinada ni operada por Renfe.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section" id="download">
     <div class="section-container">
       <div class="cta-card">
-        <img src="images/app-icon.png" alt="Andén" class="cta-icon">
+        <img src="images/app-icon.webp" alt="Andén" class="cta-icon" width="80" height="80" loading="lazy" decoding="async">
         <h2>Tu tren, en directo.</h2>
         <p>Disponible gratis en App Store. Sin suscripción, sin anuncios, sin registro.</p>
         <a href="#" class="btn btn-primary btn-large">
@@ -308,7 +407,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="images/app-icon.png" alt="Andén" class="footer-logo-img">
+            <img src="images/app-icon.webp" alt="Andén" class="footer-logo-img" width="28" height="28" loading="lazy" decoding="async">
             <span class="footer-logo-text">andén</span>
           </div>
           <p class="footer-tagline">Tu tren, en directo.</p>
