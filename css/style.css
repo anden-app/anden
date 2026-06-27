@@ -110,6 +110,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -117,7 +119,9 @@ body {
   color: var(--text-primary);
   background: var(--bg-page);
   line-height: 1.6;
+  max-width: 100%;
   overflow-x: hidden;
+  position: relative;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -1010,6 +1014,35 @@ img { max-width: 100%; display: block; }
   .nav-links, .nav-cta { display: none; }
   .nav-mobile-toggle { display: flex; }
 
+  .navbar,
+  .mobile-menu,
+  .hero,
+  .stats-bar,
+  .features,
+  .how-it-works,
+  .operators,
+  .faq,
+  .cta-section,
+  .footer {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .nav-container,
+  .hero-container,
+  .section-container,
+  .footer-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hero {
+    padding-top: 104px;
+    overflow: hidden;
+  }
+
   .hero-container {
     flex-direction: column;
     text-align: center;
@@ -1021,16 +1054,59 @@ img { max-width: 100%; display: block; }
   .hero-subtitle { font-size: 16px; }
   .hero-buttons { justify-content: center; }
   .hero-note { text-align: center; }
+  .hero-phone {
+    width: min(100%, 320px);
+    display: flex;
+    justify-content: center;
+  }
 
-  .floating-card-1 { left: -20px; top: 40px; }
-  .floating-card-2 { right: -20px; bottom: 140px; }
-  .floating-card-3 { right: -10px; top: 140px; }
+  .btn {
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .floating-card {
+    max-width: min(320px, calc(100vw - 40px));
+    white-space: normal;
+    animation: none;
+    z-index: 3;
+  }
+  .floating-card-1 {
+    top: 28px;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .floating-card-2 {
+    top: auto;
+    right: 0;
+    bottom: 132px;
+    left: auto;
+  }
+  .floating-card-3 {
+    top: auto;
+    right: auto;
+    bottom: 42px;
+    left: 0;
+  }
 
   .stats-container { gap: 24px; }
   .stat-number { font-size: 22px; }
   .stat-label { font-size: 11px; }
 
   .features-grid, .faq-grid { grid-template-columns: 1fr; }
+  .feature-card,
+  .faq-item,
+  .steps-list,
+  .steps-phone,
+  .cta-card,
+  .footer-support {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
   .steps-layout { flex-direction: column-reverse; gap: 40px; }
 
   .phone-frame {
@@ -1057,6 +1133,14 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 480px) {
+  .nav-container,
+  .hero-container,
+  .section-container,
+  .footer-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .hero-text h1 { font-size: 32px; }
 
   .phone-frame {
@@ -1073,9 +1157,15 @@ img { max-width: 100%; display: block; }
     border-radius: 21px;
   }
 
-  .floating-card { padding: 10px 12px; }
+  .floating-card {
+    padding: 10px 12px;
+    max-width: calc(100vw - 40px);
+  }
   .floating-card-title { font-size: 12px; }
   .floating-card-desc { font-size: 10px; }
+  .floating-card-1 { top: 24px; }
+  .floating-card-2 { right: -4px; bottom: 124px; }
+  .floating-card-3 { left: -4px; bottom: 36px; }
 
   .stat-divider { display: none; }
   .stats-container { flex-wrap: wrap; gap: 20px; }
